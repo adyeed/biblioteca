@@ -1,0 +1,14 @@
+@CHARSET "ISO-8859-1";
+
+fieldset {
+	width: 300px;
+	height: auto;
+}
+
+#index {
+	float: left;
+}
+
+/* .table td { */
+/* 	text-align: center; */
+/* } */
