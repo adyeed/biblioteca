@@ -2,7 +2,7 @@
     <wb-module deploy-name="arquitectura_java">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="arquitectura_java"/>
         <property name="java-output-path" value="/arquitectura_java/build/classes"/>
+        <property name="context-root" value="biblio"/>
     </wb-module>
 </project-modules>
