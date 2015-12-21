@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20/12/2015 11:39:27 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="org.omicron.apps.orm.Libros" table="libros" catalog="biblioteca" optimistic-lock="version">
+        <id name="codigo" type="java.lang.Integer">
+            <column name="codigo" />
+            <generator class="identity" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="60" />
+        </property>
+        <property name="editorial" type="string">
+            <column name="editorial" length="60" />
+        </property>
+        <property name="autor" type="string">
+            <column name="autor" length="60" />
+        </property>
+        <property name="genero" type="string">
+            <column name="genero" length="45" />
+        </property>
+        <property name="paisAutor" type="string">
+            <column name="pais_autor" length="45" />
+        </property>
+        <property name="paginas" type="java.lang.Integer">
+            <column name="paginas" />
+        </property>
+        <property name="fechaEdicion" type="date">
+            <column name="fecha_edicion" length="10" />
+        </property>
+        <property name="precioLibro" type="java.lang.Long">
+            <column name="precio_libro" precision="10" scale="0" />
+        </property>
+        <set name="prestamoses" table="prestamos" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="libros_codigo" not-null="true" />
+            </key>
+            <one-to-many class="org.omicron.apps.orm.Prestamos" />
+        </set>
+    </class>
+</hibernate-mapping>
